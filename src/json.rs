@@ -1,7 +1,7 @@
 use serde::{Deserialize};
 
 #[derive(Deserialize)]
-struct APIResponse {
+pub struct APIResponse<T> {
 	meta: ApiMetadata,
 	jsonapi: JsonApiVersion,
 	links: Links,
@@ -29,7 +29,7 @@ struct JsonApiVersion {
 	version: String
 }
 
-#[derive(Deserailize)]
+#[derive(Deserialize)]
 struct Links {
 	first: String,
 	last: String

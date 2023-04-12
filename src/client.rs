@@ -1,5 +1,5 @@
 use reqwest::header::HeaderMap;
-use reqwest::header::{ACCEPT, CONTENT_TYPE, AUTHORIZATION};
+use reqwest::header::{ACCEPT, AUTHORIZATION, CONTENT_TYPE};
 use reqwest::Client as ReqwestClient;
 use reqwest::{Error, RequestBuilder, Response};
 
@@ -9,11 +9,9 @@ pub struct Client {
 
 impl Client {
     pub fn init(&self, key: &str) -> Result<Self, Box<dyn std::error::Error>> {
-
         let headers = self.headers(key);
-        
-        let ctx = ReqwestClient::builder()
-            .default_headers(headers);
+
+        let ctx = ReqwestClient::builder().default_headers(headers);
 
         let Ok(res) = ctx.build() else {
             return Err("Some problems were encountered trying to build the client, please report this as an issue on GitHub!".into());
@@ -48,5 +46,5 @@ impl Client {
 
 pub enum RequestType {
     Get,
-    Post
+    Post,
 }
