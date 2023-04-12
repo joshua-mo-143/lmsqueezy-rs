@@ -1,3 +1,3 @@
-mod client;
-mod products;
-mod json;
+pub mod client;
+pub mod json;
+pub mod products;

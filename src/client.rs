@@ -1,7 +1,7 @@
 use reqwest::header::HeaderMap;
 use reqwest::header::{ACCEPT, AUTHORIZATION, CONTENT_TYPE};
 use reqwest::Client as ReqwestClient;
-use reqwest::{Error, RequestBuilder, Response};
+use reqwest::{Error, Response};
 
 pub struct Client {
     ctx: ReqwestClient,

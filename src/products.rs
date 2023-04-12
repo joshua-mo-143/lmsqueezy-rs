@@ -1,35 +1,35 @@
 use crate::client::{Client, RequestType};
+use crate::json::APIResponse;
 use reqwest::Result as ReqwestResult;
 use serde::Deserialize;
-use crate::json::APIResponse;
 
-struct Products;
+pub struct Products;
 
 #[derive(Deserialize)]
 pub struct Product {
-    r#type: String,
-    id: String,
-    productinfo: ProductInfo,
+    pub r#type: String,
+    pub id: String,
+    pub productinfo: ProductInfo,
 }
 
 #[derive(Deserialize)]
 pub struct ProductInfo {
-    store_id: i32,
-    name: String,
-    slug: String,
-    description: String,
-    status: String,
-    status_formatted: String,
-    thumb_url: String,
-    large_thumb_url: String,
-    price: i32,
-    pay_what_you_want: bool,
-    from_price: Option<f32>,
-    to_price: Option<f32>,
-    buy_now_url: String,
-    price_formatted: Option<String>,
-    created_at: String,
-    updated_at: String,
+    pub store_id: i32,
+    pub name: String,
+    pub slug: String,
+    pub description: String,
+    pub status: String,
+    pub status_formatted: String,
+    pub thumb_url: String,
+    pub large_thumb_url: String,
+    pub price: i32,
+    pub pay_what_you_want: bool,
+    pub from_price: Option<f32>,
+    pub to_price: Option<f32>,
+    pub buy_now_url: String,
+    pub price_formatted: Option<String>,
+    pub created_at: String,
+    pub updated_at: String,
 }
 
 enum ProductLinks {
